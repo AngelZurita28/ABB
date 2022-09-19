@@ -14,29 +14,24 @@ namespace _EDD_Tarea3
     public partial class Form1 : Form
     {
         ABB arbol;
+
         public Form1()
         {
             InitializeComponent();
             arbol = new ABB();
-        }
+        } 
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            if (String.IsNullOrEmpty(textBox1.Text) == false)
+            if (String.IsNullOrEmpty(tbInsertar.Text) == false)
             {
-                arbol.insertar(textBox1.Text);
+                arbol.Insertar(tbInsertar.Text);
 
-                textBox2.Text = arbol.inorden();
-                textBox3.Text = arbol.preorden();
-                textBox4.Text = arbol.postorden();
+                tbInorden.Text = arbol.Inorden();
+                tbPreorden.Text = arbol.Preorden();
+                tbPostorden.Text = arbol.Postorden();
 
-                string ruta = arbol.graficar();
+                string ruta = arbol.Graficar();
 
                 System.Threading.Thread.Sleep(1000);
 
@@ -44,22 +39,18 @@ namespace _EDD_Tarea3
                 Image img = Image.FromStream(file);
                 pictureBox1.Image = img;
                 file.Close();
-
             }
-
-           
-
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnReiniciar_Click(object sender, EventArgs e)
         {
             arbol.limpiar();
 
-            textBox2.Text = arbol.inorden();
-            textBox3.Text = arbol.preorden();
-            textBox4.Text = arbol.postorden();
+            tbInorden.Text = arbol.Inorden();
+            tbPreorden.Text = arbol.Preorden();
+            tbPostorden.Text = arbol.Postorden();
 
-            string ruta = arbol.graficar();
+            string ruta = arbol.Graficar();
 
             System.Threading.Thread.Sleep(1000);
 
@@ -69,19 +60,25 @@ namespace _EDD_Tarea3
             file.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(tbInsertar.Text) == false)
+            {
+                arbol.Eliminar(tbInsertar.Text);
 
-        }
+                tbInorden.Text = arbol.Inorden();
+                tbPreorden.Text = arbol.Preorden();
+                tbPostorden.Text = arbol.Postorden();
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+                string ruta = arbol.Graficar();
 
-        }
+                System.Threading.Thread.Sleep(1000);
 
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
+                FileStream file = new FileStream(ruta, FileMode.Open);
+                Image img = Image.FromStream(file);
+                pictureBox1.Image = img;
+                file.Close();
+            }
         }
     }
 }

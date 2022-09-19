@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbInorden = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.tbPreorden = new System.Windows.Forms.TextBox();
+            this.tbPostorden = new System.Windows.Forms.TextBox();
+            this.tbInsertar = new System.Windows.Forms.TextBox();
+            this.btnReiniciar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAgregar
             // 
-            this.button1.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(171, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 40);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Insertar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnAgregar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(171, 12);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(71, 40);
+            this.btnAgregar.TabIndex = 1;
+            this.btnAgregar.Text = "Insertar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // label1
             // 
@@ -63,19 +64,18 @@
             this.label1.Size = new System.Drawing.Size(78, 22);
             this.label1.TabIndex = 3;
             this.label1.Text = "Inorden";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox2
+            // tbInorden
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(12, 85);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(305, 80);
-            this.textBox2.TabIndex = 4;
+            this.tbInorden.BackColor = System.Drawing.Color.White;
+            this.tbInorden.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbInorden.ForeColor = System.Drawing.Color.Black;
+            this.tbInorden.Location = new System.Drawing.Point(12, 85);
+            this.tbInorden.Multiline = true;
+            this.tbInorden.Name = "tbInorden";
+            this.tbInorden.ReadOnly = true;
+            this.tbInorden.Size = new System.Drawing.Size(305, 80);
+            this.tbInorden.TabIndex = 4;
             // 
             // label2
             // 
@@ -86,7 +86,6 @@
             this.label2.Size = new System.Drawing.Size(90, 22);
             this.label2.TabIndex = 3;
             this.label2.Text = "Preorden";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // label3
             // 
@@ -97,53 +96,52 @@
             this.label3.Size = new System.Drawing.Size(97, 22);
             this.label3.TabIndex = 3;
             this.label3.Text = "Postorden";
-            this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox3
+            // tbPreorden
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Location = new System.Drawing.Point(12, 210);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(305, 80);
-            this.textBox3.TabIndex = 4;
+            this.tbPreorden.BackColor = System.Drawing.Color.White;
+            this.tbPreorden.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPreorden.ForeColor = System.Drawing.Color.Black;
+            this.tbPreorden.Location = new System.Drawing.Point(12, 210);
+            this.tbPreorden.Multiline = true;
+            this.tbPreorden.Name = "tbPreorden";
+            this.tbPreorden.ReadOnly = true;
+            this.tbPreorden.Size = new System.Drawing.Size(305, 80);
+            this.tbPreorden.TabIndex = 4;
             // 
-            // textBox4
+            // tbPostorden
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Location = new System.Drawing.Point(12, 340);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(305, 80);
-            this.textBox4.TabIndex = 4;
+            this.tbPostorden.BackColor = System.Drawing.Color.White;
+            this.tbPostorden.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPostorden.ForeColor = System.Drawing.Color.Black;
+            this.tbPostorden.Location = new System.Drawing.Point(12, 340);
+            this.tbPostorden.Multiline = true;
+            this.tbPostorden.Name = "tbPostorden";
+            this.tbPostorden.ReadOnly = true;
+            this.tbPostorden.Size = new System.Drawing.Size(305, 80);
+            this.tbPostorden.TabIndex = 4;
             // 
-            // textBox1
+            // tbInsertar
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(13, 15);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 37);
-            this.textBox1.TabIndex = 4;
+            this.tbInsertar.BackColor = System.Drawing.Color.White;
+            this.tbInsertar.Font = new System.Drawing.Font("Calisto MT", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbInsertar.ForeColor = System.Drawing.Color.Black;
+            this.tbInsertar.Location = new System.Drawing.Point(13, 15);
+            this.tbInsertar.Multiline = true;
+            this.tbInsertar.Name = "tbInsertar";
+            this.tbInsertar.Size = new System.Drawing.Size(154, 37);
+            this.tbInsertar.TabIndex = 4;
             // 
-            // button2
+            // btnReiniciar
             // 
-            this.button2.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(12, 452);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(305, 40);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Reiniciar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnReiniciar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReiniciar.Location = new System.Drawing.Point(12, 452);
+            this.btnReiniciar.Name = "btnReiniciar";
+            this.btnReiniciar.Size = new System.Drawing.Size(305, 40);
+            this.btnReiniciar.TabIndex = 1;
+            this.btnReiniciar.Text = "Reiniciar";
+            this.btnReiniciar.UseVisualStyleBackColor = true;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // panel1
             // 
@@ -154,7 +152,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(556, 480);
             this.panel1.TabIndex = 5;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -165,23 +162,34 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Font = new System.Drawing.Font("Calisto MT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(248, 12);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(69, 40);
+            this.btnEliminar.TabIndex = 6;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(892, 504);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbPostorden);
+            this.Controls.Add(this.tbPreorden);
+            this.Controls.Add(this.tbInsertar);
+            this.Controls.Add(this.tbInorden);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnReiniciar);
+            this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -196,17 +204,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tbInorden;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox tbPreorden;
+        private System.Windows.Forms.TextBox tbPostorden;
+        private System.Windows.Forms.TextBox tbInsertar;
+        private System.Windows.Forms.Button btnReiniciar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 
