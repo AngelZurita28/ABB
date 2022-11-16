@@ -15,22 +15,22 @@ namespace _EDD_Tarea3
         public ABB()
         { raiz = null; }
 
-        public void Insertar(string nuevoDato)
+        public void Insertar(int nuevoDato)
         { raiz = Insertar(raiz, nuevoDato); }
 
-        private NodoABB Insertar(NodoABB raiz, string nuevoDato)
+        private NodoABB Insertar(NodoABB raiz, int nuevoDato)
         {
             if (raiz == null)
             { 
                 raiz = new NodoABB(nuevoDato);
                 return raiz;
             }
-            if (string.Compare(raiz.dato, nuevoDato) == 1)
+            if (raiz.dato > nuevoDato)
             {
                 raiz.izquierdo = Insertar(raiz.izquierdo, nuevoDato);
                 return raiz;
             }
-            if (string.Compare(raiz.dato, nuevoDato) == -1)
+            if (raiz.dato < nuevoDato)
             {
                 raiz.derecho = Insertar(raiz.derecho, nuevoDato);
                 return raiz;
@@ -38,47 +38,47 @@ namespace _EDD_Tarea3
             return raiz;
         }
 
-        public void Eliminar(string dato)
-        { raiz = Eliminar(raiz, dato);}
+        //public void Eliminar(string dato)
+        //{ raiz = Eliminar(raiz, dato); }
 
-        private NodoABB Eliminar(NodoABB raiz, string dato)
-        {
-            if (raiz == null)
-            { return raiz; }
+        //private NodoABB Eliminar(NodoABB raiz, string dato)
+        //{
+        //    if (raiz == null)
+        //    { return raiz; }
             
-            if (string.Compare(raiz.dato, dato) > 0)
-            {
-                raiz.izquierdo = Eliminar(raiz.izquierdo, dato);
-                return raiz;
-            }
-            if (string.Compare(raiz.dato, dato) < 0)
-            {
-                raiz.derecho = Eliminar(raiz.derecho, dato);
-                return raiz;
-            }
-            if (raiz.izquierdo == null && raiz.derecho == null)
-            {
-                raiz = null;
-                return raiz;
-            }
-            if (raiz.izquierdo == null && raiz.derecho != null)
-            {
-                raiz = raiz.derecho;
-                return raiz;
-            }
-            if (raiz.izquierdo != null && raiz.derecho == null)
-            {
-                raiz = raiz.izquierdo;
-                return raiz;
-            }
-            else
-            {
-                NodoABB nodoDeValorMinimo = ObtenerNodoDeValorMinimo(raiz.derecho);
-                raiz.dato = nodoDeValorMinimo.dato;
-                raiz.derecho = Eliminar(raiz.derecho, nodoDeValorMinimo.dato);
-            }
-            return raiz;
-        }
+        //    if (string.Compare(raiz.dato, dato) > 0)
+        //    {
+        //        raiz.izquierdo = Eliminar(raiz.izquierdo, dato);
+        //        return raiz;
+        //    }
+        //    if (string.Compare(raiz.dato, dato) < 0)
+        //    {
+        //        raiz.derecho = Eliminar(raiz.derecho, dato);
+        //        return raiz;
+        //    }
+        //    if (raiz.izquierdo == null && raiz.derecho == null)
+        //    {
+        //        raiz = null;
+        //        return raiz;
+        //    }
+        //    if (raiz.izquierdo == null && raiz.derecho != null)
+        //    {
+        //        raiz = raiz.derecho;
+        //        return raiz;
+        //    }
+        //    if (raiz.izquierdo != null && raiz.derecho == null)
+        //    {
+        //        raiz = raiz.izquierdo;
+        //        return raiz;
+        //    }
+        //    else
+        //    {
+        //        NodoABB nodoDeValorMinimo = ObtenerNodoDeValorMinimo(raiz.derecho);
+        //        raiz.dato = nodoDeValorMinimo.dato;
+        //        raiz.derecho = Eliminar(raiz.derecho, nodoDeValorMinimo.dato);
+        //    }
+        //    return raiz;
+        //}
 
         private NodoABB ObtenerNodoDeValorMinimo(NodoABB raiz)
         {

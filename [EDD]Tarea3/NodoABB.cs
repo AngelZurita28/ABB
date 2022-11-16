@@ -8,11 +8,11 @@ namespace _EDD_Tarea3
 {
     class NodoABB
     {
-        public string dato { get; set; }
+        public int dato { get; set; }
         public NodoABB izquierdo { get; set; }
         public NodoABB derecho { get; set; }
 
-        public NodoABB(string dato)
+        public NodoABB(int dato)
         {
             this.dato = dato;
             this.izquierdo = null;

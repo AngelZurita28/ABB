@@ -19,26 +19,36 @@ namespace _EDD_Tarea3
         {
             InitializeComponent();
             arbol = new ABB();
+
         } 
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(tbInsertar.Text) == false)
             {
-                arbol.Insertar(tbInsertar.Text);
+                int[] datos = new int[int.Parse(tbInsertar.Text)];
+                Random r = new Random();
+                for (int i = 0; i < datos.Length; i++)
+                {
+                    datos[i] = r.Next(0, 10);
+                }
+                for (int i = 0; i < datos.Length; i++)
+                {
+                    arbol.Insertar(datos[i]);
 
-                tbInorden.Text = arbol.Inorden();
-                tbPreorden.Text = arbol.Preorden();
-                tbPostorden.Text = arbol.Postorden();
+                    tbInorden.Text = arbol.Inorden();
+                    tbPreorden.Text = arbol.Preorden();
+                    tbPostorden.Text = arbol.Postorden();
 
-                string ruta = arbol.Graficar();
+                    string ruta = arbol.Graficar();
 
-                System.Threading.Thread.Sleep(1000);
+                    System.Threading.Thread.Sleep(1000);
 
-                FileStream file = new FileStream(ruta, FileMode.Open);
-                Image img = Image.FromStream(file);
-                pictureBox1.Image = img;
-                file.Close();
+                    FileStream file = new FileStream(ruta, FileMode.Open);
+                    Image img = Image.FromStream(file);
+                    pictureBox1.Image = img;
+                    file.Close();
+                }
             }
         }
 
@@ -64,7 +74,7 @@ namespace _EDD_Tarea3
         {
             if (String.IsNullOrEmpty(tbInsertar.Text) == false)
             {
-                arbol.Eliminar(tbInsertar.Text);
+                //arbol.Eliminar(tbInsertar.Text);
 
                 tbInorden.Text = arbol.Inorden();
                 tbPreorden.Text = arbol.Preorden();
@@ -79,6 +89,11 @@ namespace _EDD_Tarea3
                 pictureBox1.Image = img;
                 file.Close();
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            tbInorden.Text = arbol.Inorden();
         }
     }
 }
