@@ -32,23 +32,25 @@ namespace _EDD_Tarea3
                 {
                     datos[i] = r.Next(0, 10);
                 }
+                double tiempoInicial = double.Parse(DateTime.Now.Ticks.ToString());
                 for (int i = 0; i < datos.Length; i++)
                 {
                     arbol.Insertar(datos[i]);
-
-                    tbInorden.Text = arbol.Inorden();
-                    tbPreorden.Text = arbol.Preorden();
-                    tbPostorden.Text = arbol.Postorden();
-
-                    string ruta = arbol.Graficar();
-
-                    System.Threading.Thread.Sleep(1000);
-
-                    FileStream file = new FileStream(ruta, FileMode.Open);
-                    Image img = Image.FromStream(file);
-                    pictureBox1.Image = img;
-                    file.Close();
                 }
+                double tiempoFinal = double.Parse(DateTime.Now.Ticks.ToString());
+
+                tbInorden.Text = arbol.Inorden();
+                tbPreorden.Text = arbol.Preorden();
+                tbPostorden.Text = arbol.Postorden();
+
+                string ruta = arbol.Graficar();
+
+                System.Threading.Thread.Sleep(1000);
+                FileStream file = new FileStream(ruta, FileMode.Open);
+                Image img = Image.FromStream(file);
+                pictureBox1.Image = img;
+                file.Close();
+                MessageBox.Show("El tiempo total en milisegundos fue: " + ((tiempoFinal - tiempoInicial)/10000));
             }
         }
 
